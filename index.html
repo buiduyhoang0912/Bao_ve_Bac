@@ -15,7 +15,8 @@
         }
 
         body {
-            font-family: 'Georgia', Times, serif;
+            /* THỐNG NHẤT: Toàn bộ nội dung mặc định dùng Arial dễ đọc trên màn hình */
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.8;
             color: #222;
             background-color: #fcfcfc;
@@ -25,6 +26,11 @@
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+
+        /* THỐNG NHẤT: Áp dụng chữ có chân Georgia cho các tiêu đề chính để tạo nét lịch sử trang trọng */
+        h1, h2, h3, h4, .logo, .special-quote {
+            font-family: 'Georgia', Times, serif;
         }
 
         .page-subtitle {
@@ -49,7 +55,6 @@
         .logo {
             font-weight: bold;
             font-size: 1.4rem;
-            font-family: Arial, sans-serif;
         }
 
         .nav-links {
@@ -64,7 +69,6 @@
         .nav-links a {
             color: #fff;
             text-decoration: none;
-            font-family: Arial, sans-serif;
             font-size: 0.95rem;
             padding: 5px 10px;
             transition: all 0.2s;
@@ -83,19 +87,16 @@
             text-align: center;
             padding: 20px;
             margin-top: 60px;
-            font-family: Arial, sans-serif;
             font-size: 0.85rem;
         }
 
         /* ==================== II. LOGIC ẨN HIỆN TRANG SPA ==================== */
         .sub-page {
             display: none;
-            /* Mặc định ẩn tất cả các trang nội dung */
         }
 
         .sub-page.active {
             display: block;
-            /* Chỉ trang nào được thêm class 'active' mới hiển thị */
         }
 
         /* ==================== III. CSS RIÊNG CỦA TỪNG TRANG CON ==================== */
@@ -134,7 +135,6 @@
             color: #000;
             padding: 3px 8px;
             font-size: 0.8rem;
-            font-family: Arial, sans-serif;
             font-weight: bold;
         }
 
@@ -152,7 +152,6 @@
         }
 
         .meta-info {
-            font-family: Arial, sans-serif;
             font-size: 0.8rem;
             color: #ccc;
         }
@@ -171,6 +170,7 @@
             padding-right: 8px;
             font-weight: bold;
             color: #8b0000;
+            font-family: 'Georgia', Times, serif; /* Dropcap chữ to giữ font có chân để đẹp mắt */
         }
 
         .article-text h2 {
@@ -179,7 +179,6 @@
             margin-bottom: 15px;
             border-left: 4px solid #8b0000;
             padding-left: 15px;
-            font-family: Arial, sans-serif;
         }
 
         .article-image {
@@ -195,7 +194,6 @@
         }
 
         .figcaption {
-            font-family: Arial, sans-serif;
             font-size: 0.9rem;
             color: #555;
             margin-top: 8px;
@@ -212,22 +210,24 @@
             border-top: 2px solid #8b0000;
             border-bottom: 2px solid #8b0000;
             font-style: italic;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             text-align: center;
             color: #8b0000;
             background: #fff9f9;
+            line-height: 1.6;
         }
 
         .special-quote cite {
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #555;
             margin-top: 8px;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Tên tác giả trích dẫn dùng chữ không chân */
             font-weight: bold;
+            font-style: normal;
         }
 
-        /* CSS bổ sung riêng cho Khu vực tương tác Timeline */
+        /* Khu vực tương tác Timeline */
         .timeline-box {
             background: #f9f9f9;
             padding: 20px;
@@ -245,9 +245,9 @@
             margin-bottom: 10px;
             cursor: pointer;
             border-radius: 4px;
-            font-family: Arial, sans-serif;
             font-size: 0.9rem;
             transition: background 0.2s;
+            font-weight: bold;
         }
 
         .timeline-btn:hover {
@@ -285,9 +285,8 @@
         }
 
         .archive-info h4 {
-            font-family: Arial, sans-serif;
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
         }
 
         .archive-info h4 a {
@@ -335,7 +334,6 @@
         .photo-desc {
             padding: 10px;
             background: #fff;
-            font-family: Arial, sans-serif;
             font-size: 0.85rem;
             color: #333;
             border-top: 1px solid #eee;
@@ -356,17 +354,14 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Khung bọc bên ngoài giữ đúng tỉ lệ vàng 16:9 của YouTube */
         .video-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%;
-            /* Tỉ lệ 16:9 (9 / 16 = 0.5625) */
             height: 0;
             background: #000;
         }
 
-        /* Định vị iFrame tràn đầy khung bọc */
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -377,10 +372,10 @@
 
         .video-title {
             padding: 12px;
-            font-family: Arial, sans-serif;
             font-size: 0.95rem;
             font-weight: bold;
             color: #222;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
@@ -401,38 +396,31 @@
 
     <main class="container">
 
-        <!-- ================= TRANG 1: TRANG CHỦ BÀI BÁO ================= -->
         <section id="page-trangbao" class="sub-page active">
             <div class="hero-banner">
                 <div class="hero-overlay">
                     <div class="hero-content">
                         <span class="category">KỶ NIỆM LỊCH SỬ</span>
                         <h1>Chủ tịch Hồ Chí Minh - Người Anh hùng giải phóng dân tộc</h1>
-                        <p class="lead-text">Hành trình tìm đường cứu nước và những cống hiến vĩ đại của Người đối với
-                            vận mệnh của dân tộc.</p>
+                        <p class="lead-text">Hành trình tìm đường cứu nước và những cống hiến vĩ đại của Người đối với vận mệnh của dân tộc.</p>
                         <p class="meta-info">Đăng ngày: 19/05/2026 | Tác giả: Ban Biên Tập</p>
                     </div>
                 </div>
             </div>
 
             <div class="article-text">
-                <p class="dropcap">C</p>hủ tịch Hồ Chí Minh không chỉ là một vị lãnh tụ thiên tài, người thầy vĩ đại của
-                cách mạng Việt Nam, mà còn là một chiến sĩ kiên cường của phong trào cộng sản quốc tế. Suốt cả cuộc đời,
-                Người đã hiến dâng trọn vẹn cho sự nghiệp giải phóng dân tộc.</p>
+                <p class="dropcap">C</p>hủ tịch Hồ Chí Minh không chỉ là một vị lãnh tụ thiên tài, người thầy vĩ đại của cách mạng Việt Nam, mà còn là một chiến sĩ kiên cường của phong trào cộng sản quốc tế. Suốt cả cuộc đời, Người đã hiến dâng trọn vẹn cho sự nghiệp giải phóng dân tộc.</p>
 
                 <h2>Hành trình bôn ba tìm đường cứu nước</h2>
-                <p>Ngày 5 tháng 6 năm 1911, từ Bến Nhà Rồng, người thanh niên Nguyễn Tất Thành đã ra đi tìm đường cứu
-                    nước trên con tàu Đô đốc Latouche-Tréville để tìm ra con đường giải phóng cho dân tộc mình.</p>
+                <p>Ngày 5 tháng 6 năm 1911, từ Bến Nhà Rồng, người thanh niên Nguyễn Tất Thành đã ra đi tìm đường cứu nước trên con tàu Đô đốc Latouche-Tréville để tìm ra con đường giải phóng cho dân tộc mình.</p>
 
                 <figure class="article-image">
                     <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/09/anh3-4.png" alt="Bến Nhà Rồng">
-                    <figcaption>Bến Nhà Rồng - nơi người thanh niên Nguyễn Tất Thành ra đi tìm đường cứu nước năm 1911.
-                        (Ảnh tư liệu)</figcaption>
+                    <figcaption>Bến Nhà Rồng - nơi người thanh niên Nguyễn Tất Thành ra đi tìm đường cứu nước năm 1911. (Ảnh tư liệu)</figcaption>
                 </figure>
 
                 <h2>Lời tuyên ngôn độc lập vang vọng non sông</h2>
-                <p>Ngày 2 tháng 9 năm 1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đã đọc bản Tuyên ngôn
-                    Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa.</p>
+                <p>Ngày 2 tháng 9 năm 1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đã đọc bản Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa.</p>
 
                 <blockquote class="special-quote">
                     "Không có gì quý hơn độc lập, tự do!"
@@ -440,19 +428,12 @@
                 </blockquote>
 
                 <h2>Sự kiện liên quan</h2>
-                <p>Dưới đây là một số mốc son chói lọi trong cuộc đời của Người, hãy nhấn vào từng mốc thời gian để xem
-                    chi tiết:</p>
+                <p>Dưới đây là một số mốc son chói lọi trong cuộc đời của Người, hãy nhấn vào từng mốc thời gian để xem chi tiết:</p>
 
                 <div class="timeline-box">
-                    <button class="timeline-btn"
-                        data-info="05/06/1911: Nguyễn Tất Thành rời bến Nhà Rồng đi tìm đường cứu nước.">Năm
-                        1911</button>
-                    <button class="timeline-btn"
-                        data-info="03/02/1930: Thành lập Đảng Cộng sản Việt Nam tại Hương Cảng, Trung Quốc.">Năm
-                        1930</button>
-                    <button class="timeline-btn"
-                        data-info="02/09/1945: Đọc bản Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.">Năm
-                        1945</button>
+                    <button class="timeline-btn" data-info="05/06/1911: Nguyễn Tất Thành rời bến Nhà Rồng đi tìm đường cứu nước.">Năm 1911</button>
+                    <button class="timeline-btn" data-info="03/02/1930: Thành lập Đảng Cộng sản Việt Nam tại Hương Cảng, Trung Quốc.">Năm 1930</button>
+                    <button class="timeline-btn" data-info="02/09/1945: Đọc bản Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.">Năm 1945</button>
 
                     <div id="timeline-detail" class="detail-display">
                         Nhấn vào các nút phía trên để xem sự kiện lịch sử chi tiết.
@@ -461,60 +442,48 @@
             </div>
         </section>
 
-        <!-- ================= TRANG 2: TƯ LIỆU ================= -->
         <section id="page-tulieu" class="sub-page">
             <h2>Kho tư liệu về Bác Hồ</h2>
-            <p class="page-subtitle">Tổng hợp các bài viết, nghiên cứu lịch sử và bút tích quý giá của Chủ tịch Hồ Chí
-                Minh.</p>
+            <p class="page-subtitle">Tổng hợp các bài viết, nghiên cứu lịch sử và bút tích quý giá của Chủ tịch Hồ Chí Minh.</p>
 
             <div class="archive-list">
                 <div class="archive-item">
-                    <img src="https://cdn-images.vtv.vn/66349b6076cb4dee98746cf1/2024/08/15/videoframe-100742-84737808877851148318504.png"
-                        class="archive-thumb" alt="Tư liệu">
+                    <img src="https://cdn-images.vtv.vn/66349b6076cb4dee98746cf1/2024/08/15/videoframe-100742-84737808877851148318504.png" class="archive-thumb" alt="Tư liệu">
                     <div class="archive-info">
                         <h4><a href="#">Tìm hiểu về Bản Di chúc thiêng liêng của Hồ Chủ Tịch</a></h4>
-                        <p>Bản Di chúc là một văn kiện lịch sử vô giá, kết tinh những điều cốt lõi nhất về tư tưởng, đạo
-                            đức và phong cách của Người...</p>
+                        <p>Bản Di chúc là một văn kiện lịch sử vô giá, kết tinh những điều cốt lõi nhất về tư tưởng, đạo đức và phong cách của Người...</p>
                     </div>
                 </div>
                 <div class="archive-item">
-                    <img src="https://video.vietjack.com/upload2/quiz_source1/2024/03/blobid1-1711544950.png"
-                        class="archive-thumb" alt="Tư liệu">
+                    <img src="https://video.vietjack.com/upload2/quiz_source1/2024/03/blobid1-1711544950.png" class="archive-thumb" alt="Tư liệu">
                     <div class="archive-info">
                         <h4><a href="#">Thời gian Bác Hồ hoạt động cách mạng tại Pháp (1917 - 1923)</a></h4>
-                        <p>Những năm tháng hoạt động đầy gian khổ tại Paris đã giúp Người hình thành tư tưởng cứu nước
-                            đúng đắn...</p>
+                        <p>Những năm tháng hoạt động đầy gian khổ tại Paris đã giúp Người hình thành tư tưởng cứu nước đúng đắn...</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TRANG 3: HÌNH ẢNH ================= -->
         <section id="page-hinhanh" class="sub-page">
             <h2>Thư viện ảnh tư liệu</h2>
-            <p class="page-subtitle">Những khoảnh khắc chân thực, bình dị và cao cả trong cuộc đời hoạt động của Người.
-            </p>
+            <p class="page-subtitle">Những khoảnh khắc chân thực, bình dị và cao cả trong cuộc đời hoạt động của Người.</p>
 
             <div class="photo-grid">
                 <div class="photo-item">
-                    <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/4/28/1185683/4-VHTT-1002754-01.jpg"
-                        alt="Ảnh tư liệu">
+                    <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/4/28/1185683/4-VHTT-1002754-01.jpg" alt="Ảnh tư liệu">
                     <div class="photo-desc">Bến Nhà Rồng - Nơi khởi đầu hành trình vĩ đại.</div>
                 </div>
                 <div class="photo-item">
-                    <img src="https://st.download.vn/data/image/2019/06/25/phan-tich-hinh-anh-bac-ho-trong-tuc-canh-pac-po.jpg"
-                        alt="Ảnh tư liệu">
+                    <img src="https://st.download.vn/data/image/2019/06/25/phan-tich-hinh-anh-bac-ho-trong-tuc-canh-pac-po.jpg" alt="Ảnh tư liệu">
                     <div class="photo-desc">Bác Hồ làm việc trong hang Pác Bó (Ảnh dựng lại).</div>
                 </div>
                 <div class="photo-item">
-                    <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/5/14/805364/Ky-Vat-Vo-Gia-Cua-Ba-19.jpg"
-                        alt="Ảnh tư liệu">
+                    <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/5/14/805364/Ky-Vat-Vo-Gia-Cua-Ba-19.jpg" alt="Ảnh tư liệu">
                     <div class="photo-desc">Những tài liệu ghi chép lịch sử vô giá.</div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TRANG 4: VIDEO (ĐÃ SỬA LỖI LỒNG THẺ) ================= -->
         <section id="page-video" class="sub-page">
             <h2>Thư viện Video tư liệu</h2>
             <p class="page-subtitle">Các thước phim lịch sử quý báu về Chủ tịch Hồ Chí Minh được số hóa và lưu trữ.</p>
@@ -522,12 +491,11 @@
             <div class="video-grid">
                 <div class="video-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/watch?v=77kxLgUo-M0"
+                        <iframe src="https://www.youtube.com/embed/xRKUB3fUTJM"
                             title="Toàn văn: Bác Hồ đọc Tuyên ngôn độc lập | VTV24" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
                         </iframe>
-
                     </div>
                     <div class="video-title">Lễ Tuyên ngôn Độc lập tại Quảng trường Ba Đình (2/9/1945)</div>
                 </div>
@@ -544,7 +512,6 @@
                 </div>
             </div>
         </section>
-
 
     </main>
 
